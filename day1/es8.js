@@ -192,12 +192,12 @@
 // console.log(newar);
 // console.log(ar);
 
-let oned=[
-    [1,2,3],
-    [4,5,6],
-    [7,8,9]
-];
-let newarray=oned.reduce((acc,elem)=>{
-    return acc.concat(elem);
-})
-console.log(newarray);
+// let oned=[
+//     [1,2,3],
+//     [4,5,6],
+//     [7,8,9]
+// ];
+// let newarray=oned.reduce((acc,elem)=>{
+//     return acc.concat(elem);
+// })
+// console.log(newarray);
