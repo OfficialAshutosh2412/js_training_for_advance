@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events DOM</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 1% 0;
+        }
+        hr{
+            background: #c82f2f;
+        }
+    </style>
+</head>
+<body>
+    <h1 onclick="alert('h1 ')">Everything is event in javascript !</h1>
+    <hr>
+    <h2 onclick="h2()">four ways to implement events</h2>
+    <hr>
+
+    <p>1. internal events like alert()</p>
+    <p>2. by calling a fucntion</p>
+    <p id="three">3. inline like an attribute</p>
+    <p id="four">4. using event listner</p>
+
+    <button id="submitBtn">|||</button>
+    <hr>
+    <h1>Event object</h1>
+    <p>Event object is a father of all object of events.</p>
+    <p id="clickme" contenteditable="true">how to find wheteher click it, hover it or something...? now click me.!</p>
+
+
+    <script src="./event.js"></script>
+</body>
+</html>
