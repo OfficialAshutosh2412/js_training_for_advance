@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>keyboard events</h1>
+    <hr>
+    <input type="text" onkeypress="func1()">
+    <p id="showText"></p><hr>
+    <input type="text" name="" id="" onkeydown="fun2()" onkeyup="fun3()">
+    <p id="showme"></p>
+    <script>
+        const func1=()=>document.getElementById('showText').innerHTML=`${event.code}`
+
+        const fun2=()=>document.getElementById('showme').innerHTML='key pushed'
+
+        const fun3=()=>document.getElementById('showme').innerHTML='key released'
+    </script>
+</body>
+</html>

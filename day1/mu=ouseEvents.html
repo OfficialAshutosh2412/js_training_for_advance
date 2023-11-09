@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>mouse events</h1>
+    <hr>
+    <p id="ptag" onmousedown="red()" onmouseup="green()"><strong>Mouse Down and Mouse up</strong>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit libero minima expedita tempore, recusandae quisquam dolor. Obcaecati perferendis fuga quos ad nisi numquam, eum consectetur amet eveniet in praesentium provident! Eius cupiditate nostrum labore sint.</p>
+    <hr>
+    <p id="ptag2">
+        <strong>Mourse enter and mouse leave</strong>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate odit itaque explicabo! Atque, molestiae modi ducimus pariatur perspiciatis reiciendis officiis? Vero nam minima assumenda. Porro fuga deserunt, sint nostrum cumque, odit illo totam cupiditate ipsa quis dolor ut error, cum minus a vero laboriosam ipsam dolores earum? Molestiae, assumenda sed.
+    </p>
+
+
+
+    <script>
+        const red=()=>{
+            document.getElementById('ptag').style.color="red";
+        }
+
+        const green=()=>{
+            document.getElementById('ptag').style.color="green";
+        }
+
+        let enter=document.getElementById('ptag2');
+        enter.addEventListener('mouseenter',()=>{
+            enter.style.background='yellow';
+        });enter.addEventListener('mouseleave',()=>{
+            enter.style.background='cyan';
+        });
+    </script>
+</body>
+</html>
