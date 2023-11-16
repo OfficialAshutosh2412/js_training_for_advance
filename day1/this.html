@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- here this return the whole h1 element -->
+    <h1 onclick="console.log(this);">returns h1 element in console.</h1>
+
+    <h1 onclick="console.log(this.innerHTML);">returns content</h1>
+
+    <h1 style="color: red;" onclick="console.log(this.style);">returns css</h1>
+
+    <h1 onmouseover="console.log(this.innerHTML);" onmouseout="console.log('');">returns content</h1>
+
+
+</body>
+</html>

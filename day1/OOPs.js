@@ -34,3 +34,22 @@
 
 
 // this keyword
+// it returns the current context where it is applied
+
+// const a={
+//     b:"ashu",
+//     show:()=>{
+//         console.log(this);
+//     }
+// }
+// a.show()
+// here it return the window object. because this keyword is not work with this keyword.
+
+// const a={
+//     b:"ashu",
+//     show(){
+//         console.log(this);
+//     }
+// }
+// a.show()
+// here it will returnd the object a because this return here object.
