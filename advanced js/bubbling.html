@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 90vh;
+           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .parent{
+            width: 400px;
+            height: 400px;
+            background: crimson;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .child{
+            width: 150px;
+            height: 150px;
+            background: cyan;
+        }
+    </style>
+</head>
+<body>
+    <!-- parent run when click -->
+    <div class="parent" id="parent">
+        <!-- child run when click but it will run parent as well because of propagation -->
+        <div class="child" id="child"></div>
+    </div>
+
+
+    <script>
+        // getting values
+        let p=document.getElementById("parent");
+        let c=document.getElementById("child");
+
+        // function definitions
+        let runParent=() =>{
+            alert("parent")
+        }
+        let runChild=() =>{
+            alert("child")
+        }
+        // handlin event onclick with function decalaration
+        p.addEventListener('click', runParent);
+        c.addEventListener('click', runChild);
+    </script>
+</body>
+</html>
