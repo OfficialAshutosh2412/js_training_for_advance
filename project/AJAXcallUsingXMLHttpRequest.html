@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0b1f2e;
+    }
+
+    .container {
+      width: 300px;
+      background: white;
+      padding: 1%;
+      border-radius: 10px;
+    }
+
+    #myFlag img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    #indiaName {
+      text-align: center;
+      font-size: 1.4rem;
+      margin-top: 10px;
+    }
+
+    .capital {
+      text-align: center;
+      font-size: 1.4rem;
+      color: #787878;
+    }
+    .footNote{
+      display: flex;
+      font-size: 0.8rem;
+      justify-content: space-between;
+      text-align: center;
+    }
+    .hrLine{
+      color: #ffffff;
+      margin: 2% 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div id="myFlag"></div>
+    <div id="indiaName"></div>
+    <div class="capital">capital : <label id="capName"></label></div>
+    <hr class="hrLine">
+    <section class="footNote"> 
+      <div>
+        <p id="nativeName"></p>
+        <p>Native Language</p>
+      </div>
+      <div>
+        <p id="population"></p>
+        <p>Population</p>
+      </div>
+      <div>
+        <p id="demonyms"></p>
+        <p>Demonyms</p>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // get container reference
+    const container = document.querySelector("#container");
+    const myFlag = document.querySelector("#myFlag");
+    const indiaName = document.querySelector("#indiaName");
+    const capName = document.querySelector("#capName");
+    const nativeName = document.querySelector("#nativeName");
+    const population = document.querySelector("#population");
+    const demonyms = document.querySelector("#demonyms");
+    // making variable for calling api
+    const request = new XMLHttpRequest();
+    // calling api
+    request.open("GET", "https://restcountries.com/v3.1/name/bharat");
+    // sending request
+    request.send();
+
+    // get response
+    request.addEventListener("load", function () {
+      const [data] = JSON.parse(this.responseText);
+      console.log(data.flags.png);
+
+      const image = `<img src="${data.flags.png}" alt="Indian Flag" />`;
+      myFlag.innerHTML = image;
+      indiaName.innerText = data.name.common;
+      capName.innerText = data.capital;
+      nativeName.innerText = data.name.nativeName.hin.common;
+      population.innerText = data.population;
+      demonyms.innerText = data.demonyms.eng.m;
+    });
+  </script>
+</body>
+
+</html>
