@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Jokes Everyday</title>
+</head>
+<body>
+    <div class="container">
+        <p id="jokeField"></p>
+        <button id="getJokes">next joke</button>
+    </div>
+
+
+    <script>
+        /*
+        promises
+        matlab hota hai ki, jab bhi hum koi api call kerte hain to hume ya to rejection milta hain, ya fir hume success milta hain.
+
+        agar fetch call kerne pe api se data ata hai to successfull promise hota hai, otherwise rejected promise hota hai.
+
+        90% chances hote hain ki hum promises banate  nahi hai, balkibane hue ko use kerte hain....
+        
+        or callback hell se bachne ke liye hum promises ka instemal kerte hain fir wishwash kerte hain...
+
+        jokes api link here:
+        https://icanhazdadjoke.com/
+        */
+
+        // getting reference of the pararaph and the button as well..
+        const jokeField=document.querySelector('#jokeField');
+        const getJokes=document.querySelector('#getJokes');
+        
+        const gettingJokes=()=>{
+
+            // setting json header object taki file json me convert ho jaye.
+            const setHeaders={
+                headers:{
+                    Accept:"application/json"
+                }
+            }
+
+            fetch('https://icanhazdadjoke.com/', setHeaders)
+            .then((res)=>res.json())
+            .then((data)=>jokeField.innerHTML=data.joke)
+            .catch((errors)=>console.log(errors))
+        }
+
+        getJokes.addEventListener('click', gettingJokes);
+        gettingJokes();
+    </script>
+</body>
+</html>
